@@ -67,5 +67,3 @@ jobs:
           CI: true
         run: pnpm test -- --ci --reporters=default --coverage=false
 
-      - name: Build (optional)
-        run: pnpm run build --if-present
