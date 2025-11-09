@@ -1,7 +1,7 @@
-import { SupportedLang } from "./supported"
+import { SupportedLang } from './supported';
 
 export type LanguageContextType = {
-	language: SupportedLang;
-	isReady: boolean;
-	updateLanguage: (lang: SupportedLang | string) => Promise<void>;
+  language: SupportedLang;
+  isReady: boolean;
+  updateLanguage: (lang: SupportedLang | string) => Promise<void>;
 };

@@ -7,8 +7,8 @@ import { type SupportedLang } from './supported';
  */
 
 export const loadAndApplyLanguage = async (lang: SupportedLang) => {
-	const mod = await loadResources(lang);
-	const dict = mod.default;
-	i18n.addResourceBundle(lang, 'translation', dict, true, true);
-	await i18n.changeLanguage(lang);
+  const mod = await loadResources(lang);
+  const dict = mod.default;
+  i18n.addResourceBundle(lang, 'translation', dict, true, true);
+  await i18n.changeLanguage(lang);
 };

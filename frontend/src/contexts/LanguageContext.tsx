@@ -7,8 +7,8 @@ import { loadSavedLanguage, saveLanguage } from '../i18n/appStorage';
 import { loadAndApplyLanguage } from '../i18n/applyLanguage';
 
 type LanguageContextType = {
-  language: SupportedLang;                 // 'en' | 'de'
-  isReady: boolean;                        // i18n resources loaded and applied
+  language: SupportedLang; // 'en' | 'de'
+  isReady: boolean; // i18n resources loaded and applied
   updateLanguage: (lang: SupportedLang | string) => Promise<void>;
 };
 
@@ -60,12 +60,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         console.error('Language update failed:', err);
       }
     },
-    []
+    [],
   );
 
   const value = useMemo(
     () => ({ language, isReady, updateLanguage }),
-    [language, isReady, updateLanguage]
+    [language, isReady, updateLanguage],
   );
 
   // Avoid flash of untranslated UI until resources are loaded
