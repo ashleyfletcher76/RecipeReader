@@ -1,0 +1,28 @@
+services:
+  recipe-db:
+    container_name: recipe-db
+    build: ../databases/recipe-db
+    environment:
+      POSTGRES_USER: ${USER_SERVICE_USER}
+      POSTGRES_USER_TEST: ${USER_SERVICE_USER_TEST}
+      POSTGRES_PASSWORD: ${USER_SERVICE_PASSWORD}
+      POSTGRES_DB: ${USER_SERVICE_DB}
+      POSTGRES_TEST_DB: ${USER_SERVICE_TEST_DB}
+    volumes:
+      - main_data:/var/lib/postgresql/data
+    networks:
+      my_network:
+    healthcheck:
+      test: [ "CMD-SHELL", "[ -f /var/lib/postgresql/data/.db_ready ] || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+    ports:
+      - "4321:4321"
+
+networks:
+  my_network:
+
+volumes:
+  main_data:
