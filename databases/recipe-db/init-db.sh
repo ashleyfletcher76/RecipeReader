@@ -6,7 +6,7 @@ if [ -z "$POSTGRES_USER" ] || [ -z "$POSTGRES_PASSWORD" ] \
    || [ -z "$POSTGRES_DB" ] || [ -z "$POSTGRES_USER_TEST" ] \
    || [ -z "$POSTGRES_TEST_DB" ]; then
   echo "ERROR: One or more environment variables are not set."
-  echo "Please set POSTGRES_USER, POSTGRES_PASSWORD, MY_DB, MY_TEST_USER, MY_TEST_PASSWORD, and MY_TEST_DB."
+  echo "Please set POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, POSTGRES_USER_TEST, and POSTGRES_TEST_DB."
   exit 1
 fi
 
